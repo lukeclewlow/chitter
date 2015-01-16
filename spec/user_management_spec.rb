@@ -10,4 +10,9 @@ feature "User signs up" do
 		expect(page).to have_content("Welcome, bob@bob.com")
 		expect(User.first.email).to eq("bob@bob.com")
 	end
+
+	scenario "with a password that doesn't match" do
+		expect{ sign_up('hi@hi.com', 'password', 'wrong_password')}.to change(User, :count).by(0)
+	end
+	
 end
