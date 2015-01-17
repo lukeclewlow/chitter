@@ -72,6 +72,12 @@ class Chitter < Sinatra::Base
 		  end
 		end
 
+		delete '/sessions' do
+			flash[:notice] = "Good bye!"
+			session[:user_id] = nil
+			redirect '/'
+		end
+
 		helpers do
 			
 			def current_user
