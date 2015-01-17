@@ -18,7 +18,7 @@ class Chitter < Sinatra::Base
 	DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 	DataMapper::Logger.new($stdout, :debug)
 	DataMapper.finalize
-	DataMapper.auto_upgrade!
+	DataMapper.auto_migrate!
 
 	use Rack::Flash
 	use Rack::MethodOverride
@@ -51,9 +51,17 @@ class Chitter < Sinatra::Base
 				session[:user_id] = @user.id
 				redirect to '/'
 			else 
-				flash[:notice] = "Sorry, your passwords don't match"
+				flash.now[:errors] = @user.errors.full_messages
 				erb :"users/new"
 			end
+		end
+
+		helpers do
+			
+			def current_user
+				@current_user ||=User.get(session[:user_id]) if session[:user_id]
+			end
+
 		end
 
 end
