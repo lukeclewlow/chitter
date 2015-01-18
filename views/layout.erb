@@ -1,17 +1,45 @@
-  <% if current_user %>
-    Welcome, <%= current_user.email %>
-    <form method="post" action="/sessions">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Sign out">
-    </form>
-  <% end %>
+<html>
 
-  <% if flash[:notice] %>
-    <div id="notice">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
+  <head>
 
+  	<title>Chitter</title>
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css">
+
+  </head>
+
+  <header>
+  <h1>Chitter.</h1>
+	  <section="topper">
+	  <div id="logo">
+	  <img src="logo.png" alt="logo">
+	  </div>
+	  <ul>
+		  <li>
+		  	<% if current_user %>
+			    Welcome, <%= current_user.email %>
+			    <form method="post" action="/sessions">
+			      <input type="hidden" name="_method" value="delete">
+			      <input type="submit" value="Sign out">
+			    </form></li>
+			  <% else %>
+			<li>
+			  <a href="/sessions/new" class="button orange">Sign In</a></li>
+			<li> 
+				<a href="/users/new" class="button orange">Sign Up</a></li> 
+			  <% end %>
+
+	  </ul>
+
+	  <% if flash[:notice] %>
+	    <div id="notice">
+	      <%= flash[:notice] %>
+	    </div>
+	  <% end %>
+  </header>
+  </section="topper">
 <body>
 
 	<% if flash[:errors] && !flash[:errors].empty? %>
@@ -36,3 +64,4 @@
 
 
 </body>
+</html>
