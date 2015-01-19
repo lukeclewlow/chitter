@@ -6,6 +6,7 @@ class User
 
 	property :id, Serial
 	property :email, String
+	property :username, String
 	property :password_digest, Text
 
 	# has n, :peeps, :through => Resource
@@ -15,7 +16,10 @@ class User
 
 	validates_confirmation_of :password
 	validates_uniqueness_of :email
+	validates_uniqueness_of :username
+	
 	property :email, String, :unique => true
+	property :username, String, :unique => true
 
 	def password=(password)
 		@password = password

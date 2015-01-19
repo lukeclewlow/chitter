@@ -24,6 +24,7 @@ a.title {
 	font-family: "Big Caslon","Book Antiqua","Palatino Linotype",Georgia,serif;
 	font-size: 20;
 	position: center;
+	text-decoration: none;
 }
 
 header {
@@ -38,7 +39,7 @@ h1 {
 	color: #f78d1d;
 	background-color: #041833;	
 	font-family: "Big Caslon","Book Antiqua","Palatino Linotype",Georgia,serif;
-	font-sizee: 20;
+	font-size: 20;
 	position: center;
 	margin: 0 auto;
 }
@@ -101,6 +102,11 @@ div#peep_container{
 	background-position: center;
 }
 
+div#time{
+	font-size: 8;
+	padding: 0.5em;
+}
+
 .button {
 	display: inline-block;
 	outline: none;
@@ -155,4 +161,5 @@ div#peep_container{
   background-position: center;
   position: absolute;
   left: 50%;
+  /*margin-bottom: 10;*/
 }

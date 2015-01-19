@@ -18,7 +18,7 @@
 	  <ul>
 		  <li>
 		  	<% if current_user %>
-			    Welcome, <%= current_user.email %>
+			    Welcome, <%= current_user.username %>
 			    <form method="post" action="/sessions" class ="signout">
 			      <input type="hidden" name="_method" value="delete">
 			      <input type="submit" value="Sign out">
@@ -31,13 +31,9 @@
 			  <% end %>
 
 	  </ul>
-
   </header>
   </section="topper">
 <body>
-
-
-
 
 
 	<% if flash[:errors] && !flash[:errors].empty? %>
