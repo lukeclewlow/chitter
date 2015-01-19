@@ -12,7 +12,7 @@
 
 <ul class="peeps">
   <% @peeps.reverse.each do |peep| %>
-    <div id="peep_container"><li class="peeps"><%= peep.text %></li></div>
+    <div id="peep_container"><li class="peeps"><%= peep.text %><div id="time">Created on: <%= peep.created_at.strftime("%m/%d/%Y") %></div></li></div>
   <% end %>
 </ul> 
 
