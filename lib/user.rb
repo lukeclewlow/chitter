@@ -8,6 +8,8 @@ class User
 	property :email, String
 	property :password_digest, Text
 
+	# has n, :peeps, :through => Resource
+
 	attr_reader :password
 	attr_accessor :password_confirmation
 

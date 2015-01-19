@@ -86,6 +86,10 @@ form.signout{
 	text-align: left;
 }
 
+div#new-peep{
+	margin-top: 10px;
+}
+
 div#peep_container{
 	text-align: center;
 	border: 2px solid;
