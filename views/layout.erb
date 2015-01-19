@@ -4,23 +4,22 @@
 
   	<title>Chitter</title>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
-
-    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/custom.css">
 
   </head>
 
   <header>
-  <h1>Chitter.</h1>
+  <h1><a href="/" class="title">Chitter.</a></h1>
 	  <section="topper">
 	  <div id="logo">
-	  <img src="logo.png" alt="logo">
+	  	<img src="logo.png" alt="logo">
 	  </div>
 	  <ul>
 		  <li>
 		  	<% if current_user %>
 			    Welcome, <%= current_user.email %>
-			    <form method="post" action="/sessions">
+			    <form method="post" action="/sessions" class ="signout">
 			      <input type="hidden" name="_method" value="delete">
 			      <input type="submit" value="Sign out">
 			    </form></li>
@@ -33,14 +32,13 @@
 
 	  </ul>
 
-	  <% if flash[:notice] %>
-	    <div id="notice">
-	      <%= flash[:notice] %>
-	    </div>
-	  <% end %>
   </header>
   </section="topper">
 <body>
+
+
+
+
 
 	<% if flash[:errors] && !flash[:errors].empty? %>
 	  Sorry, there were the following problems with the form.
@@ -50,7 +48,6 @@
 	    <% end %>
 	  </ul>
 	<% end %>
-	
 	
 
 	<% if flash[:notice] %>

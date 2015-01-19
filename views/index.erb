@@ -1,21 +1,19 @@
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css">
-  </head>
 
-<div id="new-peep">
-  <form action="/peeps" method="post">
-    Peep: <input type="text" name="peep">
-    <input type="submit" value="Add Peep">
-  </form>
-</div>
+  <% if current_user %>
 
-
-<ul>
-  <% @peeps.each do |peep| %>
-    <li><%= peep.text %></li>
+  <div id="new-peep">
+    <form action="/peeps" method="post">
+      Peep: <input type="text" name="peep">
+      <input type="submit" value="Add Peep">
+    </form>
+  </div>
+         
   <% end %>
-</ul>
+
+<ul class="peeps">
+  <% @peeps.each do |peep| %>
+    <div id="peep_container"><li class="peeps"><%= peep.text %></li></div>
+  <% end %>
+</ul> 
 
 </html>
