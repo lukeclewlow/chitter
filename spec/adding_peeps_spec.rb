@@ -7,7 +7,8 @@ include SessionHelpers
 feature "user adds a new peep" do
 
 		before(:each) do
-    User.create(:email => "test@test.com",
+    User.create(:username => "test",
+    						:email => "test@test.com",
                 :password => 'test',
                 :password_confirmation => 'test')
   								end				
