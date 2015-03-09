@@ -7,13 +7,11 @@ require_relative './helpers/session'
 
 class Chitter < Sinatra::Base
 
-	# MIGHT NEED SOME OF THESE ONCE START FIDDLING WITH FILE STRUCTURE
-
-	# set :views, Proc.new { File.join(root, '..',"views") }
 	set :public_dir, Proc.new{File.join(root, "public")}
   set :public_folder, 'public'	
+  set :session_secret, 'super secret'
 
- env = ENV['RACK_ENV'] || 'development'
+ 	env = ENV['RACK_ENV'] || 'development'
 
 	DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 	DataMapper::Logger.new($stdout, :debug)
@@ -24,8 +22,6 @@ class Chitter < Sinatra::Base
 	use Rack::MethodOverride
 
 	enable :sessions
-	set :session_secret, 'super secret'
-
 
 		get '/' do
 			@peeps = Peeps.all

@@ -1,3 +1,7 @@
+/*=====================
+	LINKS
+=====================*/
+
 /* unvisited link */
 a:link {
 		color: #450015;
@@ -27,20 +31,80 @@ a.title {
 	text-decoration: none;
 }
 
+/*=====================
+	LAYOUT
+=====================*/
+
 header {
 	color: #f78d1d;
 	background-color: #041833;	
 	position: relative;
 	height: 4em;
-	
+	margin-bottom: 20px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+#logo img {
+	/*position: center;*/
+	margin: 0 auto;
+	/*margin-top: 5;*/
+  width:40;
+  height:auto;
+  /*background-position: center;*/
+  position: absolute;
+  left: 48.2%;
+  /*text-align: center;*/
+  /*margin-bottom: 10;*/
 }
 
+div#new-peep{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+div#peep_container{
+	text-align: center;
+	/*border: 2px solid;*/
+	border-radius: 20;
+	color: black;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	max-width: 60%;
+	background-position: center;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+div#time{
+	font-size: 8;
+	padding: 0.5em;
+}
+
+.signed_in {
+	width: 400px;
+	float: right;
+	text-align: right;
+	overflow: auto;
+	display: block;
+}
+.signed_in form {
+	width: 80px;
+	display: inline-block;
+}
+.signed_in p {
+	width: 250px;
+	margin-right: 10px;
+	display: inline-block;
+}
+/*=====================
+	TYPOGRAPHY
+=====================*/
 h1 {
 	color: #f78d1d;
 	background-color: #041833;	
 	font-family: "Big Caslon","Book Antiqua","Palatino Linotype",Georgia,serif;
 	font-size: 20;
 	position: center;
+	text-align: center;
 	/*margin: 0 auto;*/
 }
 
@@ -68,10 +132,11 @@ ul.peeps {
 	text-align: center;
 	display: block;
 	margin-top: 10px;
-	max-width: 60%;
+	max-width: 40%;
 	border: 1px solid;
 	margin: 0 auto;
-	border-radius: 2%;
+	border-radius: 1%;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
 li.peeps {
@@ -79,7 +144,9 @@ li.peeps {
 	margin: 10px;
 	padding: 2px;
 }
-
+/*=====================
+	FORMS/INTERFACES
+=====================*/
 form {
 	font-family: "Big Caslon","Book Antiqua","Palatino Linotype",Georgia,serif;
 	font-size: 14;
@@ -88,29 +155,6 @@ form {
 
 form.signout{
 	text-align: left;
-}
-
-div#new-peep{
-	margin-top: 10px;
-	margin-bottom: 20px;
-}
-
-div#peep_container{
-	text-align: center;
-	border: 2px solid;
-	border-radius: 20;
-	color: black;
-	margin: 0 auto;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	max-width: 30%;
-	background-position: center;
-	box-shadow: 0 0 5px rgba(0,0,0,0.4);
-}
-
-div#time{
-	font-size: 8;
-	padding: 0.5em;
 }
 
 .button {
@@ -136,6 +180,9 @@ div#time{
 	position: relative;
 	top: 1px;
 }
+/*=====================
+	COLOURS
+=====================*/
 
 .orange {
 	color: #fef4e9;
@@ -156,16 +203,4 @@ div#time{
 	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
 	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
-}
-
-#logo img {
-	/*position: center;*/
-	margin: 0 auto;
-	/*margin-top: 5;*/
-  width:40;
-  height:auto;
-  background-position: center;
-  position: absolute;
-  left: 50%;
-  /*margin-bottom: 10;*/
 }

@@ -8,6 +8,4 @@ class Peeps
 	property :text, Text, :length => 1..140
 	property :created_at, DateTime
 
-	# belongs_to :user
-
 end
